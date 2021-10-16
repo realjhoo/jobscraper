@@ -1,0 +1,25 @@
+const puppeteer = require("puppeteer");
+
+(async () => {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto("https://machadopedro.com");
+  // await page.goto(
+  //   "https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en"
+  // );
+
+  // await page.screenshot({ path: "website.png" });
+
+  // const grabParagraphs = await page.evaluate(() => {
+  //   const pgTags = document.querySelectorAll(".back-end ul li");
+  //   let techs = [];
+  //   pgTags.forEach((tag) => {
+  //     techs.push(tag.innerHTML);
+  //   });
+  //   return techs;
+  // });
+
+  // console.log(grabParagraphs);
+
+  await browser.close();
+})();

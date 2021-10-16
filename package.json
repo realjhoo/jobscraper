@@ -1,7 +1,7 @@
 {
   "name": "jobscraper",
   "version": "1.0.0",
-  "description": "a job scraper",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,13 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/realjhoo/jobscraper.git"
   },
-  "author": "jerry hoover",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/realjhoo/jobscraper/issues"
   },
   "homepage": "https://github.com/realjhoo/jobscraper#readme",
   "dependencies": {
-    "pupeteer": "0.0.1"
+    "puppeteer": "^10.4.0"
   }
 }
