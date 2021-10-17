@@ -75,3 +75,4 @@ typings/
 # FuseBox cache
 .fusebox/
 constant.js
+workspace.code-workspace
