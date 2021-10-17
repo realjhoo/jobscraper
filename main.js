@@ -1,4 +1,5 @@
-const puppeteer = require("puppeteer");
+const { puppeteer } = require("puppeteer");
+const { sendMail, buildDate } = require("./sendemail");
 
 (async () => {
   const url = "https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en";
@@ -9,13 +10,14 @@ const puppeteer = require("puppeteer");
   await page.goto(url);
 
   // Setup job Search
-  await page.waitForTimeout(2000);
   const searchPhrase = "assessment coordinator";
-  await page.type(".criteriaFieldInput", searchPhrase, { delay: 200 });
+  await page.waitForTimeout(2000);
+  await page.type(".criteriaFieldInput", searchPhrase);
   await page.click('input[id="search"');
 
   // Extract Data
   await page.waitForTimeout(5000);
+
   const getJobTitles = await page.evaluate(() => {
     const jobLinks = document.querySelectorAll(
       ".multiline-data-container div span a"
@@ -27,8 +29,21 @@ const puppeteer = require("puppeteer");
     return jobTitles;
   });
 
-  // console.log(getJobTitles);
-  // sendEmail(getJobTitles);
+  let jobs = getJobTitles;
+  let jobsList = "";
+  for (let i = 0; i < jobs.length; i++) {
+    jobsList += jobs[i] + "<br>";
+  }
+
+  jobsList += `<br>Click <a href="https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en">here</a> and search for "${searchPhrase}" to apply`;
+
+  // send info to email function
+  sendMail({
+    from: '"Fort Bend CAC Jobs" <professorhoover@aol.com',
+    to: "jerry.hoover@ymail.com",
+    subject: `FBISD CAC Jobs List for ${buildDate()}`,
+    html: jobsList,
+  });
 
   await browser.close();
 })();

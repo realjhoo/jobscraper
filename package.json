@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/realjhoo/jobscraper#readme",
   "dependencies": {
+    "nodemailer": "^6.7.0",
     "puppeteer": "^10.4.0"
   }
 }
