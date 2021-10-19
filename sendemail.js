@@ -35,7 +35,7 @@ function buildDate() {
   let today = new Date();
   let dow = getDayName(today.getDay());
   let date = today.getDate();
-  let month = getMonthName(today.getMonth() + 1);
+  let month = getMonthName(today.getMonth());
 
   return `${dow}, ${date} ${month}`;
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jobscraper.daemon</string>
+
+  <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/node</string>
+      <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/main.js</string>
+    </array>
+
+  <key>WorkingDirectory</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper</string>
+
+  <key>StandardOutPath</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/output.log</string>
+  <key>StandardErrorPath</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/error.log</string>
+
+  <key>StartCalendarInterval</key>
+    <dict>
+      <key>Hour</key>
+      <integer>8</integer>
+      <key>Minute</key>
+      <integer>07</integer>
+    </dict>
+
+  <key>UserName</key>
+    <string>root</string>
+
+
+</dict>
+</plist>

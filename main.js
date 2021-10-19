@@ -1,4 +1,4 @@
-const { puppeteer } = require("puppeteer");
+const puppeteer = require("puppeteer");
 const { sendMail, buildDate } = require("./sendemail");
 
 (async () => {
