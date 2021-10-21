@@ -2,6 +2,9 @@ const puppeteer = require("puppeteer");
 const { sendMail, buildDate } = require("./sendemail");
 
 (async () => {
+  const now = new Date();
+  const currentTime = `${now.getHours()}:${now.getMinutes()}`;
+  console.log(`The time is ${currentTime}`);
   const url = "https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en";
 
   // Load Page

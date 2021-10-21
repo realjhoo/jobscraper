@@ -76,3 +76,4 @@ typings/
 .fusebox/
 constant.js
 workspace.code-workspace
+main.js.bak.js

@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-  <key>Label</key>
-  <string>com.jobscraper.daemon</string>
+  <dict>
 
-  <key>ProgramArguments</key>
-    <array>
-      <string>/usr/local/bin/node</string>
-      <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/main.js</string>
-    </array>
+    <key>Label</key>
+    <string>com.jobscraper.daemon.plist</string>
 
-  <key>WorkingDirectory</key>
-    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper</string>
+    <key>RunAtLoad</key>
+    <true/>
 
-  <key>StandardOutPath</key>
-    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/output.log</string>
-  <key>StandardErrorPath</key>
-    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/error.log</string>
-
-  <key>StartCalendarInterval</key>
+    <key>StartCalendarInterval</key>
     <dict>
       <key>Hour</key>
-      <integer>8</integer>
+      <integer>08</integer>
       <key>Minute</key>
-      <integer>07</integer>
+      <integer>05</integer>
     </dict>
 
-  <key>UserName</key>
-    <string>root</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/err.log</string>
 
+    <key>StandardOutPath</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/out.log</string>
 
-</dict>
+      <key>WorkingDirectory</key>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/node</string>
+      <string>main.js</string>
+    </array>
+
+    <key>UserName</key>
+      <string>jerryhoover</string>
+
+  </dict>
 </plist>
