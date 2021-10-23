@@ -18,10 +18,10 @@
     </dict>
 
     <key>StandardErrorPath</key>
-    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/err.log</string>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/stderr.log</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/out.log</string>
+    <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper/stdout.log</string>
 
       <key>WorkingDirectory</key>
     <string>/Users/jerryhoover/Desktop/coding/personal-projects/jobscraper</string>

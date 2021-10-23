@@ -2,9 +2,6 @@ const puppeteer = require("puppeteer");
 const { sendMail, buildDate } = require("./sendemail");
 
 (async () => {
-  const now = new Date();
-  const currentTime = `${now.getHours()}:${now.getMinutes()}`;
-  console.log(`The time is ${currentTime}`);
   const url = "https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en";
 
   // Load Page
@@ -21,26 +18,44 @@ const { sendMail, buildDate } = require("./sendemail");
   // Extract Data
   await page.waitForTimeout(5000);
 
+  // Extarct Job Titles
   const getJobTitles = await page.evaluate(() => {
-    const jobLinks = document.querySelectorAll(
+    const jobLinkTitles = document.querySelectorAll(
       ".multiline-data-container div span a"
     );
     let jobTitles = [];
-    jobLinks.forEach((tag) => {
+    jobLinkTitles.forEach((tag) => {
       jobTitles.push(tag.getAttribute("title"));
     });
     return jobTitles;
   });
 
+  // Extract Job Description Links
+  const getJobLinks = await page.evaluate(() => {
+    const jobLinkTag = document.querySelectorAll(
+      ".multiline-data-container div span a"
+    );
+    let jobLinks = [];
+    jobLinkTag.forEach((tag) => {
+      jobLinks.push(tag.getAttribute("href"));
+    });
+    return jobLinks;
+  });
+
+  // Build Email Body
   let jobs = getJobTitles;
+  let links = getJobLinks;
+
   let jobsList = "";
+  const linkURL = "https://aa210.taleo.net";
+
   for (let i = 0; i < jobs.length; i++) {
-    jobsList += jobs[i] + "<br>";
+    jobsList += `<a href="${linkURL}${links[i]}">${jobs[i]}</a></br>`;
   }
 
-  jobsList += `<br>Click <a href="https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en">here</a> and search for "${searchPhrase}" to apply`;
+  jobsList += `Jobscraper found these jobs posted on <a href="https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en">FBISD's jobs page</a>, using the search parameter ${searchPhrase}.`;
 
-  // send info to email function
+  // email it
   sendMail({
     from: '"Fort Bend CAC Jobs" <professorhoover@aol.com',
     to: "jerry.hoover@ymail.com",
