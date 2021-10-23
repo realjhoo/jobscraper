@@ -18,7 +18,7 @@ const { sendMail, buildDate } = require("./sendemail");
   // Extract Data
   await page.waitForTimeout(5000);
 
-  // Extarct Job Titles
+  // Extract Job Titles
   const getJobTitles = await page.evaluate(() => {
     const jobLinkTitles = document.querySelectorAll(
       ".multiline-data-container div span a"
