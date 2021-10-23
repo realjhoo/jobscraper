@@ -1,3 +1,4 @@
+"use strict";
 const puppeteer = require("puppeteer");
 const { sendMail, buildDate } = require("./sendemail");
 
@@ -53,7 +54,7 @@ const { sendMail, buildDate } = require("./sendemail");
     jobsList += `<a href="${linkURL}${links[i]}">${jobs[i]}</a></br>`;
   }
 
-  jobsList += `Jobscraper found these jobs posted on <a href="https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en">FBISD's jobs page</a>, using the search parameter ${searchPhrase}.`;
+  jobsList += `</br>Jobscraper found these ${jobs.length} jobs posted on <a href="https://aa210.taleo.net/careersection/ex/jobsearch.ftl?lang=en">FBISD's jobs page</a>, using the search parameter "${searchPhrase}".`;
 
   // email it
   sendMail({
