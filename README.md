@@ -50,10 +50,10 @@ In addition, you will need to edit the plist to refer to the correct directories
 
 To load the plist into Launchd, type the command,
 
-`launchctl load ~/Librray/LaunchAgents/com.jobscraper.daemon.plist`
+`launchctl load ~/Libray/LaunchAgents/com.jobscraper.daemon.plist`
 
 If you need to edit the plist after that, type
 
-`launchctl unload ~/Librray/LaunchAgents/com.jobscraper.daemon.plist`
+`launchctl unload ~/Libray/LaunchAgents/com.jobscraper.daemon.plist`
 
 In addition, the automation will not run if the computer is asleep, so you may want to set the computer to wake itself at a specific time shortly before the script is scheduled to run. Of course, afterward, the computer can return to sleep mode.
