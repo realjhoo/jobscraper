@@ -28,7 +28,17 @@ Next, we need Puppeteer to automate the scraping part of our app.
 
 `npm install puppeteer`
 
-And we'll need the Nodemailer package to automate the email part.
+Puppeteer includes Chromium, but for some reason, I always have to install Chromium separately. To do that,
+
+`cd node_modules`
+`cd puppeteer`
+`node install`
+
+Then, dont forget, to return to the directory you were working in,
+
+`cd ../..`
+
+And we'll also need the Nodemailer package to automate the email part.
 
 `npm install nodemailer`
 

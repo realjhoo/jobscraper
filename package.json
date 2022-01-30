@@ -1,7 +1,7 @@
 {
   "name": "jobscraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "A scraper that, at 8:05 each morning, retrieves some data from the web using puppeteer and emails that data to me using nodemailer.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,14 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/realjhoo/jobscraper.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [],
+  "author": "Jerry L Hoover <jerry.hoover@ymail.com> (https://realjhoo.com/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/realjhoo/jobscraper/issues"
   },
   "homepage": "https://github.com/realjhoo/jobscraper#readme",
   "dependencies": {
-    "nodemailer": "^6.7.0",
-    "puppeteer": "^10.4.0"
+    "nodemailer": "^6.7.2",
+    "puppeteer": "^13.1.2"
   }
 }
