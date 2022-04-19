@@ -8,7 +8,8 @@ const { sendMail, buildDate } = require("./sendemail");
   // Load Page
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto(url);
+  await page.setDefaultNavigationTimeout(0);
+  await page.goto(url, { waitUntil: "domcontentloaded" });
 
   // Setup job Search
   const searchPhrase = "assessment coordinator";
